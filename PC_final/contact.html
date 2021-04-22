@@ -1,0 +1,166 @@
+<html>
+<head>
+	<Title>Contact</title>
+	<link href="style2.css" rel="stylesheet" />
+	<link rel="stylesheet" 
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" 
+		crossorigin="anonymous">
+	<link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/8bit-wonder" type="text/css"/>
+	<link href='https://fonts.googleapis.com/css?family=Lato:300,400,500' rel='stylesheet' type='text/css'>
+	<meta charset="UTF-8">
+	<meta name="description" content="Contact page">
+	<meta name="keywords" content="HTML, CSS, JavaScript">
+	<meta name="author" content="Nathan Carey">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="background-image: url(pinkbg.gif);">
+	<nav class="navbar navbar-expand-lg navbar-dark navbar-custom nav-fill w-100">
+		<a class="navbar-brand" href="index.html"><img src = "pc.jpg" height = "75px" width = "75px"></a>
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item" ><a class="nav-link" href="store.html">Store</a></li>
+				<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+				<li class="nav-item"><a class="nav-link" href="contact.html" >Contact Me</a></li>
+			</ul>
+	</nav>
+	
+	<br>
+	<br>
+	
+	<div class="container">
+		<div class="row justify-content-center">
+			<img src = "insta.png"/>
+		</div>
+	</div>
+	
+	<br>
+	<br>
+
+	
+	<div style= "padding-left: 110px;" class="container justify-content-center">
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="thumbnail">
+					<a href="https://www.instagram.com/shoppixelchick/">
+						<img src = "instagram.png" width = "200px" height = "200px" />
+					</a>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="thumbnail">
+					<a href="https://twitter.com/shoppixelchick">
+						<img src = "twitter.png" width = "200px" height = "200px" />
+					</a>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="thumbnail">
+					<a href="https://www.depop.com/shoppixelchick/">
+						<img src = "depop.png" width = "200px" height = "200px" />
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<br>
+	<br>
+	
+	<div class="container">
+		<div class="row justify-content-center">
+			<h2 class="navbar-text">Contact Me</h2>
+		</div>
+	</div>
+
+    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Feel free to contact me directly!</p>
+
+    <div class="row justify-content-center">
+        <div class="col-md-9 mb-md-0 mb-5">
+            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="name" name="name" class="form-control">
+							<div class = "il">
+								<label for="name">Your name</label> 
+								<div class="nerror" style = "color: red;"></div>
+							</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                            <input type="text" id="email" name="email" class="form-control">
+                            <div class = "il">
+								<label for="email">Your email</label> 
+								<div class="eerror" style = "color: red;"></div>
+							</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <input type="text" id="subject" name="subject" class="form-control">
+                            <div class = "il">
+								<label for="email">Subject</label> 
+								<div class="serror" style = "color: red;"></div>
+							</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form">
+                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                            <div class = "il">
+								<label for="email">Your message</label> 
+								<div class="merror" style = "color: red;"></div>
+							</div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+			
+			<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+			<script src='https://www.google.com/recaptcha/api.js'></script>
+			
+			<div style= "padding-left: 25px;" class="container justify-content-center">
+				<div class="row">
+					<div class="col-lg-4">
+						<img src = "confirm.png"/>
+						
+					</div>
+					<div class="col-lg-4">
+						<div class="form-group">
+							<div class="md-form mb-0">
+								<input type="text" id="captcha" name="captcha" class="form-control">
+								<label for="captcha" class="">Confirm the word on the left</label>
+							</div>
+						</div>
+						
+					</div>
+					<div class="col-lg-4">
+						<div class="text-center text-md-right">
+							<a class="btn btn-primary" onclick="validateForm();">Send</a>
+							<div style = "color: red;" class="status"></div>
+						</div>
+					</div>
+				</div>
+			</div>  
+        </div>
+    </div>
+	
+	<script src = "validate.js">
+	</script>
+	
+	<br>
+	<br>
+	<br>
+	<br>
+
+
+</body>
+</html>

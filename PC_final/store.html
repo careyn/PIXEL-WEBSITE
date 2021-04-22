@@ -1,0 +1,250 @@
+<html>
+<head>
+	<Title>Store</title>
+	<link href="style2.css" rel="stylesheet" />
+	<link rel="stylesheet" 
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" 
+		crossorigin="anonymous">
+	<link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/8bit-wonder" type="text/css"/>
+	<meta charset="UTF-8">
+	<meta name="description" content="Store front and purchasing processor">
+	<meta name="keywords" content="HTML, CSS, JavaScript, PHP">
+	<meta name="author" content="Nathan Carey">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="background-image: url(pinkbg.gif);">
+	<nav class="navbar navbar-expand-lg navbar-dark navbar-custom nav-fill w-100">
+		<a class="navbar-brand" href="index.html"><img src = "pc.jpg" height = "75px" width = "75px"></a>
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item" ><a class="nav-link" href="store.html">Store</a></li>
+				<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+				<li class="nav-item"><a class="nav-link" href="contact.html" >Contact Me</a></li>
+			</ul>
+	</nav>
+	
+	<br>
+	<br>
+	
+	<?php
+	$servername = "fdb30.awardspace.net";
+	$username = "3757480_tab";
+	$password = "tabular12";
+	$database = "3757480_tab";
+	$port = "3306";
+	
+	$conn = mysqli_connect($servername, $username, $password, $database, $port);
+	
+	if (!$conn) {
+		die("Connection failed: " . mysqli_connect_error());
+	}
+        
+        
+	$sql = "SELECT * FROM six";
+	$result = $conn->query($sql);
+	
+	echo "<div class='container'>";
+        echo "<h1 class='navbar-text' id='six'> USD 6.00 EARRINGS</h1>";
+	
+	if ($result->num_rows > 0) {
+		
+		while($row = $result->fetch_assoc()) {
+			echo "<h2 style = 'color: #E75480;'>" . $row["p_name"] . "</h2>";
+			echo "<br>";
+			echo "<div class='row'>";
+			
+			echo "<div class='col-lg-4'>";
+			echo "<img src='" . $row["p_img"] . "' style='width:200px;height:200px;'>";
+			echo "</div>";
+			echo "<div class='col-lg-8 bg'>";
+			echo $row["p_desc"];
+			echo "</div>";
+			echo "</div>";
+			echo "<br>";
+			
+	}
+	} else {
+		echo "0 results";  
+	}
+        echo "</div>";
+        
+        $sql = "SELECT * FROM sixtwofive";
+	$result = $conn->query($sql);
+	
+	echo "<div class='container'>";
+	
+        echo "<h1 class='navbar-text' id='sixtwofive'> USD 6.25 EARRINGS</h1>";
+        
+	if ($result->num_rows > 0) {
+		
+		while($row = $result->fetch_assoc()) {
+			echo "<h2 style = 'color: #E75480;'>" . $row["p_name"] . "</h2>";
+			echo "<br>";
+			echo "<div class='row'>";
+			
+			echo "<div class='col-lg-4'>";
+			echo "<img src='" . $row["p_img"] . "' style='width:200px;height:200px;'>";
+			echo "</div>";
+			echo "<div class='col-lg-8 bg'>";
+			echo $row["p_desc"];
+			echo "</div>";
+			echo "</div>";
+			echo "<br>";
+			
+	}
+	} else {
+		echo "0 results";  
+	}
+        echo "</div>";
+        
+        
+        
+        $sql = "SELECT * FROM sixfifty";
+	$result = $conn->query($sql);
+	
+	echo "<div class='container'>";
+        echo "<h1 class='navbar-text' id='sixfifty'> USD 6.50 EARRINGS</h1>";
+	
+	if ($result->num_rows > 0) {
+		
+		while($row = $result->fetch_assoc()) {
+			echo "<h2 style = 'color: #E75480;'>" . $row["p_name"] . "</h2>";
+			echo "<br>";
+			echo "<div class='row'>";
+			
+			echo "<div class='col-lg-4'>";
+			echo "<img src='" . $row["p_img"] . "' style='width:200px;height:200px;'>";
+			echo "</div>";
+			echo "<div class='col-lg-8 bg'>";
+			echo $row["p_desc"];
+			echo "</div>";
+			echo "</div>";
+			echo "<br>";
+			
+	}
+	} else {
+		echo "0 results";  
+	}
+	echo "</div>";
+	
+	?>
+	
+
+	<br>
+	<br>
+        
+        <div class="container">
+		<div class="row justify-content-center">
+			<h1 class='navbar-text' id='buy'>MAKE A PURCHASE</h1>
+		</div>
+	</div>
+        
+        <br>
+	<br>
+        
+        <form onsubmit="return false" name = "form";>
+		<div class="row justify-content-center">
+			<div class="form-group col-lg-3">
+				<label>Quantity:</label>
+				<input type="text" class="form-control form-control-sm" id="quant">
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="form-group col-lg-3">
+				<label>Product price:</label>
+				<select class="form-control" id = "type">
+					<option value = "6">$6.00</option>
+					<option value = "6.25">$6.25</option>
+					<option value = "6.50">$6.50</option>
+				</select>
+			</div>
+		</div>
+                <div class="row justify-content-center">
+			<div class="form-group col-lg-3">
+				<label>Product style:</label>
+				<div class="radio">
+					<label><input type="radio" name="optradio">Option 1</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="optradio">Option 2</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="optradio" checked>Option 3</label>
+				</div>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="form-group col-lg-3">
+				<div class="form-group">
+					<label for="comment">Additional Comments:</label>
+					<textarea class="form-control" rows="5" id="comment"></textarea>
+				</div>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<button onClick="submitform()">Calculate Price</button>
+		</div>
+	</form>
+	<div class="row justify-content-center">
+		<small><div id="res">&nbsp;</div><small>
+	</div>
+        
+    </br>
+        
+    <script src="https://www.paypal.com/sdk/js?client-id=AeLCkl_Lt5-nG3NRSLdKc-MsNuwQdMvojxXZKnUBhbsXQlzOziIXEwbt7gj2IIFjlkNLwfrIDfF-34nj"></script>
+
+    <div class="row justify-content-center">
+		<div id="paypal-button-container"></div>
+	</div>
+        
+        
+
+        <script>
+		
+        paypal.Buttons({
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{
+            amount: {
+            value: '0.01'
+				  }
+				}]
+			  });
+			}
+		  }).render('#paypal-button-container');
+        </script>
+                
+	</br>
+	
+	
+	<script type="text/javascript">
+	function submitform()
+	{
+		const opt = document.querySelector('#type');
+		var price = opt.value;
+		var quant = document.getElementById("quant").value;
+		var discount = 1;
+		var delivCost = 3.50;
+		if(quant > 10 || quant < 1) {
+			document.getElementById("res").innerHTML = "Invalid quantity, please resubmit";
+		}
+		else {
+			if (quant > 2) {
+				discount = 0.9;
+			}
+			if(quant > 3) {
+				discount = 0.85;
+			}
+			document.getElementById("res").innerHTML = "Your total comes to $" + (price * quant * discount + delivCost);
+		}
+		
+	}
+	</script>
+        
+    <br>
+	<br>
+	<br>
+	<br>
+	
+</body>
+</html>
