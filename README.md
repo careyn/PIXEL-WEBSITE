@@ -24,8 +24,8 @@ Hosted on: http://is1500finproj-careyn.atwebpages.com/
 
 ## Page Breakdown:
 
-- Item Home - Landing page.  Has price buttons that link to specific region of the store page with products of that price.  Has a BUY button that leads to the store page's purchase form.
-- Item About - Information about her sale policies, video at the bottom.
-- Item Store - Dynamic page using php to display stock information stored in 3 SQL tables.  Purchase form with javascript validation + calculation, and a paypal button with purchase - Item processing.
-- Item Contact - Information about her social media, social media icons that link to each platform, and a contact form with javascript validation and a captcha.
+- Home - Landing page.  Has price buttons that link to specific region of the store page with products of that price.  Has a BUY button that leads to the store page's purchase form.
+- About - Information about her sale policies, video at the bottom.
+- Store - Dynamic page using php to display stock information stored in 3 SQL tables.  Purchase form with javascript validation + calculation, and a paypal button with purchase - processing.
+- Contact - Information about her social media, social media icons that link to each platform, and a contact form with javascript validation and a captcha.
 
